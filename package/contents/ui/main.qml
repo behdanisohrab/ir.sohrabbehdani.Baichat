@@ -121,7 +121,7 @@ Item {
 					Layout.fillWidth:true
 					height:parent.height
 					verticalAlignment:Text.AlignVCenter
-					text:i18n("Chat-GPT")
+					text:i18n("BaiChat")
 					color:theme.textColor
 				}
 			}
@@ -154,11 +154,11 @@ Item {
 
 				focus: true
 
-				url:"https://chat.openai.com/chat"
+				url:"https://chatbot.theb.ai/#/"
 
 				profile: WebEngineProfile {
 					id:chatGptProfile
-					storageName: "chat-gpt"
+					storageName: "BaiChat"
 					offTheRecord:false
 					//persistentStoragePath:"~/.local/share/plasmashell/QtWebEngine/ChatGPT/"
 					httpCacheType: WebEngineProfile.DiskHttpCache
@@ -203,11 +203,11 @@ Item {
 				}
 
 				onJavaScriptConsoleMessage : if (Qt.application.arguments[0] == "plasmoidviewer") {
-					console.log("Chat-GPT : " + message);
+					console.log("BaiChat : " + message);
 				}
 
 				onNavigationRequested :if(request.navigationType == WebEngineNavigationRequest.LinkClickedNavigation){
-					if(request.url.toString().match(/https?\:\/\/chat\.openai\.com/)) {
+					if(request.url.toString().match(/https?\:\/\/chatbot\.theb\.ai/)) {
 						gptWebView.url = request.url;
 					} else {
 						Qt.openUrlExternally(request.url);
@@ -247,15 +247,6 @@ Item {
 				placeholderText:i18n("Paste the accesss link that was send to your email.")
 				text:""
 			}
-			Button {
-				// text: i18n("ChatGPT Pro")
-				enabled: proLinkContainer.visible
-				icon.name: "go-next"
-				onClicked:  {
-					gptWebView.url = proLinkField.text;
-					proLinkContainer.visible= false;
-				}
-			}
 		}
 		Row {
 			id:toolRow
@@ -268,17 +259,11 @@ Item {
 				onClicked: gptWebView.reload();
 			}
 			Button {
-				text: i18n("Im a Pro")
-				visible:gptWebView.url.toString().match(/chat\.openai\.com\/auth/);
-				icon.name: "x-office-contact"
-				onClicked: proLinkContainer.visible = true;
-			}
-			Button {
-				text: i18n("Back to ChatGPT")
+				text: i18n("Back to BaiChat")
 				visible:!gptWebView.url.toString().match(/chat\.openai\.com\/(|chat|auth)/);
 				enabled:visible
 				icon.name: "edit-undo"
-				onClicked: gptWebView.url = "https://chat.openai.com/chat";
+				onClicked: gptWebView.url = "https://chatbot.theb.ai/#/";
 			}
 			Button {
 				text: i18n("Debug")

@@ -18,7 +18,7 @@ Kirigami.FormLayout {
     }
     QQC2.Label {
 		font.pixelSize: 12
-		text:i18n("When checked pressing Enter will send the query to ChatGPT.");
+		text:i18n("When checked pressing Enter will send the query to Baichat.");
 	}
 	QQC2.Label {
 		font.pixelSize: 8
@@ -33,7 +33,7 @@ Kirigami.FormLayout {
 
 	QQC2.CheckBox {
         id: allowClipboardAccess
-        text: i18n("Allow ChatGPT system clipboard access")
+        text: i18n("Allow Baichat system clipboard access")
     }
     QQC2.Label {
 		font.pixelSize: 8

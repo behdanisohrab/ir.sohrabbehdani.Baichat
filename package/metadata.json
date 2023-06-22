@@ -2,20 +2,20 @@
     "KPlugin": {
         "Authors": [
             {
-                "Name": "DarkEye"
+                "Name": "Sohrab Behdani"
             }
         ],
         "Category": "Online Services",
-        "Description": "ChatGPT plasmoid for Plasma.",
+        "Description": "BaiChat plasmoid for Plasma.",
         "Icon": "search-symbolic",
-        "Id": "com.darkeye.chatGPT",
+        "Id": "ir.sohrabbehdani.BaiChat",
         "License": "BSD 3.0",
-        "Name": "ChatGPT Plasmoid",
+        "Name": "BaiChat Plasmoid",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "0.7",
-        "Website": "https://github.com/dark-eye/com.darkeye.chatGPT"
+        "Version": "0.2",
+        "Website": "https://github.com/behdanisohrab/ir.sohrabbehdani.Baichat"
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-MainScript": "ui/main.qml",
